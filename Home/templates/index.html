@@ -1,0 +1,61 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewpoint" content="width:device-width, initial-scale=1.0">
+        <title>Online Auction System</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+<body>
+    <!-- Navbar code -->
+    <nav class="header">
+        <a href="/" class="logo">Online Auction System</a>
+        <div class="header-right">
+            <a href="/">Home</a>
+            <a href="/">About</a>
+            <a href="/">Contact</a>
+            <a href="{% url 'register' %}">Sign-in</a>
+            <a href="/">Log-in</a>
+        </div>
+    </nav>
+    <!-- navbar code end -->
+    <!-- Home section code -->
+    <div class="container">
+        <h1 class="text">1# Free Public Auction</h1>
+        <h6 class="small">Vehical | Vintage items | Clothes | Equipment</h6>
+        <p class="paragraph">Welcome to Online Auction Website. This is absolutely free website. Just register yourself and log-in. Want to know more about us!</p>
+        <br>
+        <a href='/' class="button">Click Here</a>
+    </div>
+    <!-- Home section code -->
+    <hr>
+    <!-- Contact section code -->
+    <section class="s2">
+        <div class="main-container">
+            <a href=""></a>
+            <h3 style="text-align: center; color: white; font-size: 20px;">Get In Touch</h3>
+
+            <form id="contact-form" method="post" action="/">
+                {% csrf_token %}
+                <a name="contact"></a>
+
+                <label>Name</label>
+                <input class="input-field" type="text" name="name">
+
+                <label>Email</label>
+                <input class="input-field" type="email" name="email">
+
+                <label>Subject</label>
+                <input class="input-field" type="text" name="subject">
+
+                <label>Message</label>
+                <input class="input-field" name="description"></textarea>
+
+                <input id="submit-btn" type="submit" value="send">
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact section code -->
+</body>
+</html>
